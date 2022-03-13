@@ -14,10 +14,15 @@ export default {
         }
     },
     mounted: function(){
-        const today = new Date()
-        const thisYear = today.getFullYear()
-        const nextMonth = today.getMonth() + 2
-        this.todaydate = `${thisYear}年${nextMonth}月分の予約`
+        this.getDate()
+    },
+    methods: {
+        getDate() {
+            const today = new Date()
+            const thisYear = today.getFullYear()
+            const nextMonth = today.getMonth() + 2
+            this.todaydate = `${thisYear}年${nextMonth}月分の予約`
+        }
     }
 }
 </script>
