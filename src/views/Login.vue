@@ -1,5 +1,4 @@
 <template>
-    <!--
     <div class="login">
         <div><h1>ログインしてください。</h1></div>
         <div class="form-item">
@@ -24,12 +23,10 @@
             <button class="button" @click="handle()">Login</button>
         </div>
     </div>
-    -->
-    <h1>Home</h1>
 </template>
 
 <script>
     export default {
-        name: "HomeMenu",
+        name: "Login",
     }
 </script>
