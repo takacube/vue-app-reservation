@@ -1,8 +1,15 @@
 <template>
-    <div id="title">
-        <h1>じらふ</h1>
-        <h1>{{ todaydate }}</h1>
-    </div>
+    <header>
+        <h1>じらふヘルパー</h1>
+        <nav class="gnav">
+            <ul class="menu">
+                <router-link to="/">Home</router-link> |
+                <router-link to="/calendar">Calendar</router-link> |
+                <router-link to="/description">description</router-link> |
+            </ul>
+        </nav>
+        <!--<h1>{{ todaydate }}</h1>-->
+    </header>
 </template>
 
 <script>
@@ -27,7 +34,31 @@ export default {
 }
 </script>
 <style>
-    #title {
-        color: black;
+    header {
+        width: 100%;
+        height: 50px;
+        background: rgb(68, 235, 210);
+        padding: 20px 50px;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    header .gnav .menu {
+        display: flex;
+    }
+
+    header .gnav .menu li {
+        list-style: none;
+    }
+    ul {
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+    h1 {
+        color: white;
     }
 </style>

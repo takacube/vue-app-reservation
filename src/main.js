@@ -1,5 +1,4 @@
 import { createApp } from 'vue'
-import HeaderSet from './HeaderSet.vue'
-import MainBody from './MainBody.vue'
-createApp(HeaderSet).mount('#header')
-createApp(MainBody).mount('#main')
+import App from './App.vue'
+import router from './router'
+createApp(App).use(router).mount('#main')
