@@ -20,7 +20,7 @@
             >
         </div>
         <div class="form-item">
-            <button class="button" @click="handle()">Button</button>
+            <button class="button" @click="handle()">Login</button>
         </div>
     </div>
 </template>
