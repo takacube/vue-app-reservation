@@ -1,7 +1,7 @@
 <template>
     <div class="head">
         <h2 class="ui header">
-            <i class="plug icon"></i>
+            <i class="address book icon"></i>
             <div class="content">
                 <ul class="nav justify-content-end list">
                     <li class="nav-item">
