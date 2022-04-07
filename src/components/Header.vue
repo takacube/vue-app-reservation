@@ -1,19 +1,12 @@
 <template>
-    <div>
-        <header>
-            <h1 class="title">じらふヘルパー</h1>
-            <!--
-            <nav class="gnav">
-                <ul class="menu">
-                    <router-link to="/">Home</router-link> |
-                    <router-link to="/calendar">Calendar</router-link> |
-                    <router-link to="/description">description</router-link> |
-                </ul>
-            </nav>
-            -->
-            <!--<h1>{{ todaydate }}</h1>-->
-            <div>
-                <ul class="nav justify-content-end">
+    <div class="head">
+        <h2 class="ui header">
+            <i class="plug icon"></i>
+            <div class="content">
+                <ul class="nav justify-content-end list">
+                    <li class="nav-item">
+                        <router-link class="nav-link title-name" to="/">じらふ</router-link>
+                    </li>
                     <li class="nav-item">
                         <router-link class="nav-link" to="/">Home</router-link>
                     </li>
@@ -25,7 +18,7 @@
                     </li>
                 </ul>
             </div>
-        </header>
+        </h2>
     </div>
 </template>
 
@@ -51,30 +44,19 @@ export default {
 }
 </script>
 <style>
-    header {
-        width: 100%;
-        height: 50px;
-        background: linear-gradient(to bottom left, cyan 50%, rgb(233, 215, 14) 50%);
-        padding: 20px 50px;
-        box-sizing: border-box;
-        position: fixed;
-        top: 0;
-        /*left: 0;*/
-        display: flex;
-        align-items: center;
+    .head {
+        background: rgb(87, 86, 86);
     }
-
-    header .gnav .menu {
-        display: flex;
-        align-items: flex-end;
+    ul.list{
+        text-align: left;
+        float: right;
     }
-
-    header .gnav .menu li {
-        list-style: none;
+    ul.list li{
+        display: inline;
+        margin-left: 20px;
     }
-
-    .title {
-        color: rgb(255, 255, 255);
-        font-size: 3vw;
+    .title-name {
+        color: rgb(254, 254, 254);
+        margin-right: 40px;
     }
 </style>

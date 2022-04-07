@@ -36,7 +36,7 @@
 <script>
     import axios from 'axios';
     export default {
-        name: "Description",
+        name: "Login",
         data() {
             return {
                 date: "xxx",
