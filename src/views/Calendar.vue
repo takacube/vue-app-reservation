@@ -1,8 +1,8 @@
 <template>
     <h2>Calendar{{ currentDate }}</h2>
-    <div v-for="(week, index) in calendars" :key="index" style="display:flex">
+    <div v-for="(week, index) in calendars" :key="index" style="display:flex" class="ui buttons">
         <form v-for="(day, index) in week" :key="index">
-            <button>{{ day.date }}</button>
+            <button v-bind:id="day.date" class="ui blue basic button" @click=showModal()>{{ day.date }}</button>
         </form>
     </div>
 </template>
@@ -45,6 +45,9 @@ export default {
                 calendars.push(weekRow);
             }
             return calendars;
+        },
+        showModal() {
+            this.$router.push('./')
         }
     },
     computed: {
