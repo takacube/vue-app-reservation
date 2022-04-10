@@ -18,17 +18,9 @@
                         </div>
                     </div>
                     <button class="ui blue submit button" type="submit" @click="handle()">ログイン</button>
+                    <button class="ui submit button" type="submit"><i class="signup icon"></i>初めての方</button>
                 </div>
             </div>
-            <div class="middle aligned column">
-                <div class="ui big button">
-                    <i class="signup icon"></i>
-                    初めての方
-                </div>
-            </div>
-        </div>
-        <div class="ui vertical divider">
-            Or
         </div>
     </div>
 </template>

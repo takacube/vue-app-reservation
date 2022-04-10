@@ -21,5 +21,6 @@ export default {
     footer{
         position: absolute;/*←絶対位置*/
         bottom: 0; /*下に固定*/
+        width: 100%;
     }
 </style>

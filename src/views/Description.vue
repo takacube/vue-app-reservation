@@ -21,14 +21,11 @@
                 </div>
             </div>
             <div class="middle aligned column">
-                <div class="ui big button">
+                <div class="ui small button">
                     <i class="signup icon"></i>
                     初めての方
                 </div>
             </div>
-        </div>
-        <div class="ui vertical divider">
-            Or
         </div>
     </div>
 </template>
