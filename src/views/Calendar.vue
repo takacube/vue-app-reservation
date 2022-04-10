@@ -8,11 +8,10 @@
         <div class="calendar-ui">
             <div v-for="(week, index) in calendars" :key="index" class="ui buttons capcher-calendar">
                 <form class="form-ui" v-for="(day, index) in week" :key="index">
-                    <button v-bind:id="{ active: isActive}" class="ui button button-1" @click="modalOpen = day.date;">{{ day.date }}</button>
+                    <button v-bind:id="{ active: isActive}" class="ui button button-1" @click="modalOpen=day.date;">{{ day.date }}</button>
                 </form>
             </div>
         </div>
-        <h1>{{reservationList}}</h1>
     <teleport to="body">
         <div v-if="modalOpen" class="modal">
             <div class="modalButton">
@@ -32,7 +31,7 @@
                     </div>
                     <div class="field">
                         <label>ご要望があれば入力ください</label>
-                        <textarea v-model="description" name="kanso" rows="4" cols="40"></textarea>
+                        <input v-model="description" type="text" name="last-name">
                     </div>
 
                     <button class="ui button" @click="modalOpen=false">閉じる</button>
@@ -45,41 +44,21 @@
         <div v-if="checkModalOpen" class="modal">
             <div class="modalButton scroll">
                 <form class="ui form">
-                    <a class="ui teal tag label">5/9</a>
-                    <div class="field">
-                        <label>開始時間</label>
-                        <input type="time" name="first-name" value="09:00">
-                        <label>終了時間</label>
-                        <input type="time" name="first-name" value="15:00">
-                        <label>目的地</label>
-                        <input type="text" name="last-name" placeholder="目的地を入力してください" value="サンシャイン水族館">
-                        <label>ご要望があれば入力ください</label>
-                        <textarea name="kanso" rows="4" cols="40"></textarea>
-                    </div>
-                    <a class="ui teal tag label">5/19</a>
-                    <div class="field">
-                        <label>開始時間</label>
-                        <input type="time" name="first-name" value="12:00">
-                        <label>終了時間</label>
-                        <input type="time" name="first-name" value="19:00">
-                        <label>目的地</label>
-                        <input type="text" name="last-name" placeholder="目的地を入力してください" value="向ヶ丘公園">
-                        <label>ご要望があれば入力ください</label>
-                        <textarea name="kanso" rows="4" cols="40"></textarea>
-                    </div>
-                    <a class="ui teal tag label">5/27</a>
-                    <div class="field">
-                        <label>開始時間</label>
-                        <input type="time" name="first-name" value="12:00">
-                        <label>終了時間</label>
-                        <input type="time" name="first-name" value="18:00">
-                        <label>目的地</label>
-                        <input type="text" name="last-name" placeholder="目的地を入力してください" value="ディズニーランド">
-                        <label>ご要望があれば入力ください</label>
-                        <textarea name="kanso" rows="4" cols="40"></textarea>
+                    <div v-for="item in JSON.parse(this.$cookies.get('reservationAllList'))" :key="item.destination">
+                        <a class="ui teal tag label">{{item.date}}</a>
+                        <div class="field">
+                            <label>開始時間</label>
+                            <input type="time" name="first-name" v-bind:value="item.startTime">
+                            <label>終了時間</label>
+                            <input type="time" name="first-name" v-bind:value="item.endTime">
+                            <label>目的地</label>
+                            <input type="text" name="last-name" placeholder="目的地を入力してください" v-bind:value="item.destination">
+                            <label>ご要望</label>
+                            <p>{{item.description}}</p>
+                        </div>
                     </div>
                     <button class="ui button" @click="checkModalOpen=false">戻る</button>
-                    <button class="blue ui button" type="submit">　予約を確定　</button>
+                    <button class="blue ui button" type="submit" @click="finishReservation()">　予約を確定　</button>
                 </form>
             </div>
         </div>
@@ -142,7 +121,8 @@ export default {
         addToList(selectedDate) {
             const list = { date: selectedDate, startTime: this.startTime, endTime: this.endTime, destination: this.destination, description: this.description}
             let existedList = []
-            if(this.$cookies.get("reservationAllList").length > 0){
+
+            if(this.$cookies.isKey("reservationAllList")　&& this.$cookies.get("reservationAllList").length > 0){
                 existedList = JSON.parse(this.$cookies.get("reservationAllList"))
                 existedList.push(list)
             } else {
@@ -150,6 +130,10 @@ export default {
             }
             this.$cookies.set("reservationAllList", JSON.stringify(existedList))
             /*this.reservationList.push(list)*/
+        },
+        finishReservation() {
+            this.$cookies.remove("reservationAllList")
+            this.$router.push('./description')
         }
     },
     computed: {
