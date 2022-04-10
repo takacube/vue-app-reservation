@@ -5896,6 +5896,11 @@ vim@^0.1.0:
   resolved "https://registry.yarnpkg.com/vim/-/vim-0.1.0.tgz#ddec872bc8a934cc5167c23f9dbce4839c1699a7"
   integrity sha1-3eyHK8ipNMxRZ8I/nbzkg5wWmac=
 
+vue-cookies@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/vue-cookies/-/vue-cookies-1.8.0.tgz#1deb0227364f9b5b59f3519c64d86431c9a0d5f0"
+  integrity sha512-5nxAwW4kIS6uP0G9UnWcmSj2NlFpV1wkvAAwGgkWqyPDVCP1IEzFZfg7YUBLiYowZ/cFnxaXqS1nWPIBwfXGRw==
+
 vue-eslint-parser@^8.0.1:
   version "8.3.0"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-8.3.0.tgz#5d31129a1b3dd89c0069ca0a1c88f970c360bd0d"
