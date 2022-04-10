@@ -1,32 +1,13 @@
 <template>
-    <div class="ui placeholder segment">
-        <div class="ui two column very relaxed stackable grid">
-            <div class="column">
-                <div class="ui form">
-                    <div class="field">
-                        <label>名前</label>
-                        <div class="ui left icon input">
-                            <input type="text" placeholder="なまえ" v-model="name">
-                            <i class="user icon"></i>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>パスワード</label>
-                        <div class="ui left icon input">
-                            <input type="password" v-model="password">
-                            <i class="lock icon"></i>
-                        </div>
-                    </div>
-                    <button class="ui blue submit button" type="submit" @click="handle()">ログイン</button>
-                </div>
-            </div>
-            <div class="middle aligned column">
-                <div class="ui small button">
-                    <i class="signup icon"></i>
-                    初めての方
-                </div>
-            </div>
+   <div class="ui placeholder segment">
+        <div class="ui icon header">
+            <i class="birthday cake icon"></i>
+                <h1>予約が完了しました！</h1>
+                <h2>予約が確定次第ラインでお知らせします！</h2>
+                <br>
+                予約内容の変更、キャンセルなどは
         </div>
+        <div class="ui primary button">OK</div>
     </div>
 </template>
 
@@ -47,5 +28,13 @@
         }
     }
 </script>
-<style>
+<style scoped>
+    .ui {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .button {
+        width: 25%;
+    }
 </style>
