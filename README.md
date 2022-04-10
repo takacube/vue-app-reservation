@@ -23,3 +23,6 @@ yarn build
 
 ## UI Structure
 
+![image](https://user-images.githubusercontent.com/83538851/162606439-a80ded61-ed00-487f-a678-c998076ffdf0.png)
+
+![image](https://user-images.githubusercontent.com/83538851/162606536-504e768a-fb09-4475-a747-5306ba1af3b2.png)
